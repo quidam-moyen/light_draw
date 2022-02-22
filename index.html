@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>tablette lumineuse</title>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/png" href="src/ressources/icon3.png"> 
+        <link href="src/styles/w3.css" rel="stylesheet">
+		<link href="src/styles/materialsicon.css" rel="stylesheet">
+        <link href="src/styles/style.css" rel="stylesheet">
+
+		<script src="src/lib/angular.min.js"></script>
+		<script src="src/lib/paper-full.js"></script>
+		<script src="src/lib/tools.js"></script>
+
+		
+	</head>
+
+	<body ng-app="App"  ng-controller="AppCtrl" id="app" style="overflow: hidden;">
+		<div class="w3-content w3-padding" style="max-width:1564px">
+			<canvas id="myCanvas" resize></canvas>
+
+			<div class="flexRow w3-center">
+				<div class="w3-display-right w3-padding w3-col l6 m5" style="overflow: auto; display: flex; flex-direction: column; height: 100%;">
+					<div class="w3-container w3-black">
+						<h1>tablette lumineuse <img src="src/ressources/icon3.png" width="50"></img></h1>
+					</div>
+
+					<br/>
+
+					<div>
+						<!-- <h3>paramètres principaux</h3> -->
+						<span class="flexRow"> <span class="label">l :</span> <input type="number" class="w3-input" ng-model="dim.l"> </span>
+						<span class="flexRow"> <span class="label">h :</span> <input type="number" class="w3-input" ng-model="dim.h"> </span>
+						<span class="flexRow"> <span class="label">ep plexi :</span> <input type="number" class="w3-input" ng-model="dim.epp"> </span>
+
+						<hr/>
+
+						<!-- <h3>paramètres avancés</h3> -->
+						<span class="flexRow"> <span class="label">m :</span> <input type="number" class="w3-input" ng-model="dim.m"> </span>
+						<span class="flexRow"> <span class="label">ep bois :</span> <input type="number" class="w3-input" ng-model="dim.epb"> </span>
+						<span class="flexRow"> <span class="label">l bande leds :</span> <input type="number" class="w3-input" ng-model="dim.lbl"> </span>
+						<span class="flexRow"> <span class="label">nb niveaux :</span> <input type="number" min="0" step="1" class="w3-input" ng-model="dim.nb"> </span>
+					</div>
+
+					<hr/>
+
+					<span class="flexRow">
+						<!-- <button class="w3-button" ng-click="doSave = true"><span class="material-icons">download</span></button> -->
+						<button class="w3-button" id="download-to-svg" ng-click="saving = true"><span class="material-icons">download</span></button>
+						<input type="file" id="inputfile">
+					</span>
+				</div>
+			</div>
+		</div>
+
+		
+		<!-- <input type="file" id="inputfile">
+		<button id="download-to-svg">DOWNLOAD</button> -->
+	</body>
+
+
+	<script src="src/main2.js"></script>
+
+
+	<style>
+		.label {
+			width: 200px;
+			text-align: right;
+			margin-right: 10px;
+		}
+
+		html,
+		body {
+			margin: 0;
+			overflow: hidden;
+			height: 100%;
+		}
+
+		/* Scale canvas with resize attribute to full size */
+		canvas[resize] {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	
+</html>
